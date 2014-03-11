@@ -17,7 +17,6 @@ class testform(forms.Form):
 def index(request):
     if request.method == 'POST':
         form =  UploadForm( request.POST, request.FILES)
-        
         if form.is_valid():
             obj = form.save(commit = False)
             uploadedfile = request.FILES["threatfile"] 
@@ -25,6 +24,7 @@ def index(request):
             filecontent = uploadedfile.read(uploadedfile._size)
             obj.sha256 =hashlib.sha256(filecontent).hexdigest()
             obj.filename = request.FILES["threatfile"].name
+
             obj.save()
     else:
         form = UploadForm()
