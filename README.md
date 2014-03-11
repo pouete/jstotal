@@ -1,4 +1,4 @@
 jstotal
 =======
 
-A simple file upload for malicious javascript, HTML, and other.
+A simple file upload in Django for malicious javascript, HTML, and other.

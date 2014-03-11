@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+      <h1>Welcome to JSTotal !</h1>
+        <p>Your ressource for client side infection</p>
+          <p><a href ="https://www.botnets.fr/index.php/Accueil" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+      </div>
+<div class="row">
+<div class="col-md-offset-4 col-md-4">
+  {{Form.errors}}
+  <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+      <div role="form">
+
+          <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+      {{ Form.threatfile }}
+                   <p class="help-block">Upload your file here.</p>
+           </div>
+
+      {{ Form.filetype }}
+      <br>
+      <br>
+      <input class="btn btn-default" type="submit" value="Upload">
+      </div>
+  </form>
+  </div>
+</div>
+{% endblock %}
