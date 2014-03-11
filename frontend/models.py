@@ -30,4 +30,8 @@ class PotentialThreat(models.Model):
     filetype = models.ForeignKey(ThreatType)
     threatfile  = models.FileField(upload_to=threatpath, max_length=200)
     submittime = models.DateTimeField(auto_now=True)
+    def __unicode__(self):
+        return u"the file %s was submitted on %s" % (self.filename,self.submittime)
+    def __str__(self):
+        return "the file %s was submitted on %s" % (self.filename,self.submittime)
 

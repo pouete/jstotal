@@ -38,7 +38,14 @@
   </div>
   <div class="col-md-6">
       <table class="table">
-          {{ latest }}
+          <thead>
+          {% for entry in latest %}
+          <tr>
+              <td>
+          {{ entry }}
+              </td>
+          </tr>
+          {% endfor %}
       </table>
 
   </div>

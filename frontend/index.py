@@ -32,7 +32,7 @@ def index(request):
             request,
             "index.html",{
                 "Form" : form ,
-                "test" : "test",
+                "latest" : models.PotentialThreat.objects.all().order_by("-submittime")[:10] 
                 }
                 )
 
