@@ -15,7 +15,7 @@ def threatpath(instance, filename):
 
 
 # Create your models here.
-class threattype(models.Model):
+class ThreatType(models.Model):
     typename = models.CharField(max_length=30)
     def __str__(self):
         return str(u"%s" % self.typename)
@@ -26,7 +26,7 @@ class threattype(models.Model):
 class PotentialThreat(models.Model):
     filename = models.CharField(max_length=100)
     sha256 =  models.CharField(max_length=100)
-    filetype = models.ForeignKey(threattype)
+    filetype = models.ForeignKey(ThreatType)
     threatfile  = models.FileField(upload_to=threatpath, max_length=200)
 
 
