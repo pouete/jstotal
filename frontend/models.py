@@ -26,7 +26,7 @@ class ThreatType(models.Model):
 
 class PotentialThreat(models.Model):
     filename = models.CharField(max_length=100)
-    sha256 =  models.CharField(max_length=100)
+    sha256 =  models.CharField(max_length=100,unique=True)
     filetype = models.ForeignKey(ThreatType)
     threatfile  = models.FileField(upload_to=threatpath, max_length=200)
     submittime = models.DateTimeField(auto_now=True)
