@@ -11,8 +11,6 @@ class UploadForm(ModelForm):
         model = models.PotentialThreat
         fields=["threatfile","filetype"]
 
-class testform(forms.Form):
-    titel = forms.CharField()
 
 def index(request):
     if request.method == 'POST':
@@ -24,7 +22,6 @@ def index(request):
             filecontent = uploadedfile.read(uploadedfile._size)
             obj.sha256 =hashlib.sha256(filecontent).hexdigest()
             obj.filename = request.FILES["threatfile"].name
-
             obj.save()
     else:
         form = UploadForm()
