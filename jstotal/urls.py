@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', "frontend.index.index" ),
+    url(r'^file\/([a-zA-Z0-9]*)$', "frontend.files.index" ),
 )

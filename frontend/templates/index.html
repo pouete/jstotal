@@ -20,7 +20,7 @@
 <div class="row">
 <div class="col-md-6">
   {{Form.errors}}
-  <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+  <form method="POST" action="/" enctype="multipart/form-data">{% csrf_token %}
       <div role="form">
 
           <div class="form-group">
@@ -42,7 +42,7 @@
           {% for entry in latest %}
           <tr>
               <td>
-          {{ entry }}
+                  {{ entry }} <a href = "/file/{{ entry.sha256 }}">Download</a>
               </td>
           </tr>
           {% endfor %}
