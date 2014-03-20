@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
+<body height=100%>
   <div class="jumbotron specialjum">
       <div class="container">
           <div class="row">
@@ -51,4 +52,11 @@
   </div>
 </div>
 </div>
+{% if Error %}
+<div style="bottom:-50px;" class="alert alert-warning alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Warning!</strong> {{ Error }}   </div>
+ 
+{% endif %}
+</body>
 {% endblock %}
